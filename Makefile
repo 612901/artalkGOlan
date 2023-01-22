@@ -13,8 +13,7 @@ install:
 	go mod tidy
 	go install github.com/markbates/pkger/cmd/pkger
 
-build: build-frontend update
-	go build \
+build:	go build \
     	-ldflags "-s -w -X github.com/ArtalkJS/ArtalkGo/lib.Version=${VERSION} \
         -X github.com/ArtalkJS/ArtalkGo/lib.CommitHash=${COMMIT_HASH}" \
         -o bin/artalk-go \
